@@ -1,4 +1,7 @@
 import pytest
+from classes.many_to_many import Author, Article, Magazine
+
+import pytest
 
 from classes.many_to_many import Article
 from classes.many_to_many import Magazine
@@ -10,13 +13,13 @@ class TestAuthor:
 
     def test_has_name(self):
         """Author is initialized with a name"""
-        author_1 = Author("Carry Bradshaw")
+        author_1 = Author("ActuallyTopher")
         author_2 = Author("Nathaniel Hawthorne")
         magazine = Magazine("Vogue", "Fashion")
         Article(author_1, magazine, "How to wear a tutu with style")
         Article(author_2, magazine, "Dating life in NYC")
 
-        assert author_1.name == "Carry Bradshaw"
+        assert author_1.name == "ActuallyTopher"
         assert author_2.name == "Nathaniel Hawthorne"
 
     def test_name_is_immutable_string(self):
